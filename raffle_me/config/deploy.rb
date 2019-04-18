@@ -1,7 +1,7 @@
 # Change these
 server '68.183.129.46', port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:jiansheng/RaffleMe.git'
+set :repo_url,        'git@github.com:jiansheng010/RaffleMe.git'
 set :application,     'raffleme'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
