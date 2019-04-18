@@ -1,0 +1,19 @@
+<!-- 4/13/2019 - Created Raffle Started page - JS Teoh -->
+<!-- 4/17/2019 - Modified Raffle Started page, enabled answer button shuffle - JS Teoh -->
+
+<!-- simple home button -->
+<div>
+    <%= button_to 'Home', '/', method: :get, id: 'home-button' %>
+    
+</div>
+
+<!-- Flex display used for centering content -->
+<div id="play-flex" data-room-code="<%= @roomcode %>">
+    <!-- Welcome message; includes data that is read by javascript -->
+    <div class="playing" id="question-box"><p><%= @currentQuestion.prompt %></p></div>
+    <% @answers.each do |answer| %>
+        <%= button_to  answer, add_points_to_entrant_path(id: @id+1, username: @username, roomcode: @roomcode, answer: answer), method: :post, id: "answer" %>
+    <% end %>
+</div>
+
+<script>endRaffle()</script>

@@ -1,0 +1,19 @@
+<%# 04/17/2019 - Austin Pearce - Modified %>
+
+<div>
+  <h1>Results for <%= params[:id] %></h1>
+  <%= button_to 'Home', home_path(username: @username, room_code: @room_code), method: :post, id: 'home-button' %>
+</div>
+<% if @winner %>
+  <h1><%= "Winner: #{@winner.username}"%></h1>
+<% else %>
+  <% if @results.length == 0 %>
+    <h1>Game ended with no results</h1>
+  <% else %>
+    <div class="results-list">
+      <% @results.each_with_index do |result, i| %>
+        <h2><%= "#{i + 1}: #{result.username} (#{result.points})" %></h2>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

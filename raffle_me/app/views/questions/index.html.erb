@@ -1,0 +1,39 @@
+<%# 04/17/2019 - Created and filled out view - Austin Pearce %>
+<%= button_to 'Home', home_path(username: @username, room_code: @room_code), method: :post, id: 'home-button-questions' %>
+<h1>Questions</h1>
+<div class="questions-container">
+  <div id="questions-form">
+    <h2>Create a Question</h2>
+    <%= form_tag 'questions', method: 'post' do %>
+      <%= label_tag :prompt, 'Prompt' %>
+      <%= text_field_tag :prompt %>
+      <%= label_tag :correct_answer, 'Correct answer' %>
+      <%= text_field_tag :correct_answer %>
+      <%= label_tag :wrong_answer_1, 'Wrong answer 1' %>
+      <%= text_field_tag :wrong_answer_1 %>
+      <%= label_tag :wrong_answer_2, 'Wrong answer 2' %>
+      <%= text_field_tag :wrong_answer_2 %>
+      <%= label_tag :wrong_answer_3, 'Wrong answer 3' %>
+      <%= text_field_tag :wrong_answer_3 %>
+      <%= submit_tag 'Create' %>
+    <% end %>
+  </div>
+  <div id="your-questions">
+    <h2>Your Questions</h2>
+    <% @user_questions.each do |question|%>
+      <div class="question">
+        <%= link_to "", questions_path(question_id: question.id), method: :delete, class: 'delete-button' %>
+        <p><%= question.prompt %></p>
+        <ol>
+          <li><%= question.correct_answer %>
+          <li><%= question.wrong_answer_1 %>
+          <li><%= question.wrong_answer_2 %>
+          <li><%= question.wrong_answer_3 %>
+        </ol>
+      </div>
+    <% end %>
+    <% if @user_questions.length == 0 %>
+      <p>No questions! Add one on the left.</p>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+#entrant-table {
+    width: 400px;
+    border-collapse:collapse;
+    border-radius:6px;
+    -moz-border-radius:6px;
+    background-color: white;
+}
+
+#entrant-table td {
+    border-top: 1px solid rgb(172, 172, 172);
+    text-align: center;
+}
+
+#entrant-table tr {
+    height: 50px;
+}
+
+#start-raffle {
+    background-color: #3a6ea5;
+    border: 1px solid #3a6ea5;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 20px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#end-raffle {
+    margin-bottom: 10px;
+}
+
+#start-raffle:hover {
+    background-color: #004e98;
+    border: 1px solid #004e98;
+}
+
+b {
+    font-size: 1.3em;
+}
+

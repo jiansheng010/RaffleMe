@@ -1,0 +1,71 @@
+<!-- 4/11/2019 - Created Index Page - Tom Paoloni -->
+
+<!-- Primary landing page for users that aren't logged in -->
+
+<!-- Corner log in button -->
+<% if user_signed_in? %>
+  <%= button_to 'Log Out', destroy_user_session_path, method: :delete, id: 'log-in-button' %>
+<% else %>
+  <%= button_to 'Log In', new_user_session_path, method: :get, id: 'log-in-button' %>
+<% end %>
+
+  <!-- Title -->
+  <h1 id="title">RaffleMe</h1>
+
+  <!-- Flex box for page forms -->
+  <div id="form-flex">
+
+    <!-- Quick-room-related forms -->
+    <div id="quick-room-forms" class="index-form">
+      <div>
+        <h3>Create Quick Room</h3>
+        <%= form_tag manage_path do |f| %>
+          <div>
+            <%= label_tag :room_name %>
+            <%= text_field_tag :room_name %>
+          </div>
+          <%= submit_tag "Create" %>
+        <% end %>
+      </div>
+      <div>
+        <h3>Join Quick Room</h3>
+        <%= form_tag play_path do |f| %>
+          <div>
+            <%= label_tag :username %>
+            <%= text_field_tag :username %>
+          </div>
+          <div>
+            <%= label_tag :room_code %>
+            <%= text_field_tag :room_code %>
+          </div>
+          <p class="error"><%= "Room code invalid" if flash[:join_code_error]%></p>
+          <%= submit_tag "Join" %>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Sign_up_form only appears when not logged in -->
+    <% if user_signed_in? %>
+
+    <% else %>
+      <div id="sign-up-form" class="index-form">
+        <h3>Sign Up for More Features</h3>
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <div>
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+          </div>
+          <div>
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+          </div>
+          <div>
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation %>
+          </div>
+          <%= f.submit "Sign up" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>

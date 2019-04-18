@@ -1,0 +1,37 @@
+.checkbox-label {
+    display: inline;
+}
+
+#standalone-form {
+    background-color:white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+/* Styles for the main flex-box covering the entire screen */
+div#login-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-height: 800px;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.form-title {
+    color: #853500;
+}
+
+#error_explanation {
+    width: 280px !important;
+}
+
+.field_with_errors {
+    background-color: transparent !important;
+}
+
+.field_with_errors input {
+    box-shadow: 0px 0px 5px red;
+}

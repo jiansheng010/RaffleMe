@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner: MyString
+  joinCode: MyString
+  entriesPool: MyString
+  questionPool: MyString
+
+two:
+  owner: MyString
+  joinCode: MyString
+  entriesPool: MyString
+  questionPool: MyString

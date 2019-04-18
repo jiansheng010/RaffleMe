@@ -1,0 +1,18 @@
+<!-- 4/13/2019 - Created Play page - Tom Paoloni -->
+<!-- 4/16/2019 - Modified Play page (Redirect to raffle_started) - JS Teoh -->
+
+<!-- simple home button -->
+<div>
+    <%= button_to 'Home', home_path(username: @username, room_code: @room_code), method: :post, id: 'home-button-play' %>
+</div>
+
+<!-- Flex display used for centering content -->
+<div id="play-flex">
+    <!-- Welcome message; includes data that is read by javascript -->
+    <p class="loading" data-room-code="<%= @room_code %>" data-username="<%= @username %>" data-email="<%= current_user&.email %>" id="room-intro">Welcome to: <%= @room_name %></p>
+    <!-- Loading Circle GIF -->
+    <img class="loading" id="loading-circle" src="<%=asset_path "loading.gif"%>">
+    <p  class="loading" id="waiting-text">Waiting for raffle to begin...</p>
+</div>
+
+<script>playRoom()</script>

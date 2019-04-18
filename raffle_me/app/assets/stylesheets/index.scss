@@ -1,0 +1,164 @@
+/* Styles for the primary landing page */
+// 04/17/2019 - Adjusted button style - Austin Pearce
+
+/* Font for the RaffleMe title */
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:700');
+
+.alert, .notice, .error {
+    margin: 0;
+}
+
+/* Styles for the main flex-box covering the entire screen */
+div#index-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 800px;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+/* Styles for the smaller flex box that covers the two forms on the index page */
+div#form-flex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the main title 'RaffleMe' */
+h1#title {
+    color: white;
+    font-size:6em;
+    font-family: 'Comfortaa', sans-serif;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+/* Styles for the corner log in button */
+input#corner-button {
+    position:absolute;
+    right: 20px;
+    top: 20px;
+    width: 80px;
+    cursor: pointer;
+    border: solid white 2px;
+    color: white;
+    background-color:transparent;
+}
+
+/* Styles for the corner room management button */
+input#room-management-button {
+    position:absolute;
+    right: 20px;
+    width: 150px;
+    top: 80px;
+    cursor: pointer;
+    border: solid white 2px;
+    color: white;
+    background-color:transparent;
+}
+
+/* Styles for the forms on the landing page */
+div.index-form {
+    background-color:white;
+    padding: 20px;
+    padding-top: 0px;
+    width: 300px;
+    border-radius: 5px;
+    margin: 20px 50px;
+}
+
+div.index-form div {
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="submit"] {
+    height: 40px;
+    width: 70px;
+    border-radius: 5px;
+    border: 0;
+}
+
+
+input[type="text"], input[type="email"], input[type="password"] {
+    border: 1px solid #CCCCCC;
+    margin-top: 5px;
+    box-shadow: inset 0 1px 1px #EEEEEE;
+    padding: 0 0 0 10px;
+    width: 290px;
+}
+
+.button {
+    height: 40px;
+    border-radius: 5px;
+}
+
+input[type="submit"], .button {
+    background-color: #3a6ea5;
+    border: 1px solid #3a6ea5;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+}
+
+input:hover[type="submit"], .button:hover {
+    background-color: #004e98;
+    border: 1px solid #004e98;
+}
+
+label {
+    font-size: 0.8em;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+
+/* Styles for the page footer */
+div#footer {
+    width:100%;
+    height: 13px;
+    padding: 30px 0px;
+    background-color: #e85e00;
+    color: white;
+    font-size: 0.8em;
+}
+
+div#footer span {
+    margin-right: 10px;
+    margin-left: 30px;
+}
+
+div#footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+div#footer a:hover {
+    color: #EBEBEB;
+}
+
+/* Media query that adjusts the flex box when the screen width is < 800px */
+@media only screen and (max-width: 800px) {
+    div#form-flex {
+        flex-direction: column;
+    }
+    div#index-flex {
+        height: auto;
+    }
+}
+
+p.error {
+    font-size: 0.8em;
+    color: red;
+}
+
+.horizontal-radios {
+    display: flex;
+}

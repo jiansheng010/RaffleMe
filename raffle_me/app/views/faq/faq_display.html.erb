@@ -1,0 +1,17 @@
+<!-- 4/15/2019 - Created FAQ Page - JS Teoh -->
+<div class="space1"></div>
+<div>
+    <h1 id = "faq-header">Frequently Asked Questions</h1>
+    <div id = "faq-div">
+        <% @questions_and_answers.each do |row| %>
+            <br />
+            <div id ="question-p"><b>Q: </b><%= row.question %></div>
+            <div id ="answer-p"><b>A: </b><%= row.answer %></div>
+            <br />
+        <% end %>
+        <div id="return-div2">
+            <a href="/" id = "return-home2" >Return to Home</a>
+        </div>
+    </div>
+</div>
+

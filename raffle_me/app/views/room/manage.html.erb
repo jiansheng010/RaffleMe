@@ -1,0 +1,32 @@
+<!-- 4/13/2019 - Created Play page - Tom Paoloni -->
+
+<div>
+  <h1><%= @room_name %></h1>
+  <p data-room-code="<%= @room_code %>" id="room-code">Room code: <b><%= @room_code %></b></p>
+
+  <div>
+    <table id="entrant-table">
+      <tbody>
+        <tr>
+          <th>Raffle Entrants</th>
+        </tr>
+        <% @entrants.each do |entrant| %>
+          <tr id="<%= entrant.client_id %>">
+            <td><%= entrant.username %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <button id="start-raffle">Start Raffle</button>
+  </div>
+
+  
+  <div>
+    <button id="end-raffle" class="button">End Raffle</button>
+  </div>
+  <div>
+    <%= button_to 'Home', home_path(username: @username, room_code: @room_code), method: :post, id: 'home-button' %>
+  </div>
+  
+</div>
+<script>manageRoom()</script>

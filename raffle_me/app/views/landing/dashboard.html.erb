@@ -1,0 +1,63 @@
+<!-- Corner log in button -->
+<%= button_to 'Log Out', destroy_user_session_path, method: :delete, id: 'corner-button' %>
+
+<div id="dash-flex">
+  <h1>My Rooms</h1>
+  <table id="my-room-table">
+    <tbody>
+      <% @my_rooms.each do |room| %>
+        <tr>
+          <td><img class="owner-crown" src="<%=asset_path "owner.svg"%>"></td>
+          <td><%= link_to room.room_name, "/manage/#{room.room_code}", method: :get %></td>
+          <td><%= room.room_code %></td>
+          <td><%= link_to "", deleteroom_path(room_code: room.room_code), method: :post, class: 'delete-button' %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td colspan="2">
+          <button id="user-create-show">Create</button>
+        </td>
+        <td colspan="2">
+          <button id="user-join-show">Join</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="join-create-form">
+      <div id="user-create-room">
+        <h3>Create Room</h3>
+        <%= form_tag manage_path do |f| %>
+          <div>
+            <%= label_tag :room_name %>
+            <%= text_field_tag :room_name %>
+          </div>
+          <div class="horizontal-radios">
+            <%= label_tag 'Raffle mode' %>
+            <%= radio_button_tag 'random_winner', 'true' %>
+            <%= label_tag 'Contest mode' %>
+            <%= radio_button_tag 'random_winner', 'false' %>
+          </div>
+          <%= submit_tag "Create" %>
+        <% end %>
+      </div>
+      <div id="user-join-room">
+        <h3>Join Room</h3>
+        <%= form_tag play_path do |f| %>
+          <div>
+            <%= label_tag :username %>
+            <%= text_field_tag :username %>
+          </div>
+          <div>
+            <%= label_tag :room_code %>
+            <%= text_field_tag :room_code %>
+          </div>
+          <p class="error"><%= "Room code invalid" if flash[:join_code_error]%></p>
+          <%= submit_tag "Join" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= button_to 'Your Custom Questions', questions_path, method: :get, id: 'questions-button' %>
+</div>
+
+<script>userRoom()</script>

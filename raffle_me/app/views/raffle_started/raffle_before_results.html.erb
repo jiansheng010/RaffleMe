@@ -1,0 +1,10 @@
+<!-- 4/17/2019 - Created Before Results page - JS Teoh -->
+
+<!-- Loading Circle GIF -->
+<div id="play-flex" data-room-code="<%= @room_code %>">
+
+</div>
+<img class="loading" id="loading-circle" src="<%=asset_path "loading.gif"%>">
+<p class="loading" id="waiting-text">Waiting for raffle to end...</p>
+
+<script>endRaffle()</script>

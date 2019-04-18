@@ -1,0 +1,30 @@
+div#play-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#question-box {
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+#question-box p {
+    font-size: 30px;
+    line-height: 30px;
+}
+
+#answer {
+    width: 500px;
+    height: 50px;
+    color:white;
+    text-align: center;
+    background-color: #3a6ea5;
+    font-size: 20px;
+    margin-bottom: 10px;
+}

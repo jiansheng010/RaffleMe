@@ -1,0 +1,30 @@
+<!-- 4/16/2019 - Moved repeating content to this layout - Tom Paoloni -->
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>RaffleMe</title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "http://localhost:3000/faye.js" %>
+    <%= javascript_include_tag "http://localhost:3000/faye/client.js" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= token_tag(nil) %>
+  </head>
+
+  <body>
+    <div id="index-flex">
+      <%= yield %>
+
+      <!-- Page footer -->
+      <div id="footer">
+        <span><a href="/team">© 2019 Have Tests? Maybe Later</a></span>
+        <a href="/faq">FAQ</a>
+        <a href="/gnu">License</a>
+      </div>
+
+    </div>
+  </body>
+</html>
