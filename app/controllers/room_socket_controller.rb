@@ -53,7 +53,7 @@ class RoomSocketController < FayeRails::Controller
   # page for that room.
   #
   observe Entrant, :after_create do |new_entrant|
-    client = Faye::Client.new('http://localhost:3000/faye')
+    client = Faye::Client.new('http://68.183.129.46:22/faye')
     client.publish("/rooms/connected/#{new_entrant[:room_code]}", { user: new_entrant[:username], cid: new_entrant[:client_id] })
   end
 

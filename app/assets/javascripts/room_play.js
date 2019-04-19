@@ -9,7 +9,7 @@ function playRoom() {
   var email = $('#room-intro').data('email');
 
   // Create a new client to connect to Faye
-  var client = new Faye.Client('http://localhost:3000/faye');
+  var client = new Faye.Client('http://68.183.129.46:22/faye');
   client.publish('/rooms', { user: username, room_code: roomCode, email: email });
 
   // Move to a new page when a room manager hits "Start Raffle"
