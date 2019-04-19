@@ -5,7 +5,7 @@
 
 function manageRoom() {
   //Create a new client to connect to Faye
-  var client = new Faye.Client('http://68.183.129.46/faye');
+  var client = new Faye.Client('http://68.183.129.46:22/faye');
   var entrants = [];
   var cids = [];
 
