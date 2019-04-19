@@ -2,6 +2,7 @@
 // 4/16/2019 - Simplified - Tom Paoloni
 
 // Function is run when the room manager page is loaded
+
 function manageRoom() {
   //Create a new client to connect to Faye
   var client = new Faye.Client('http://68.183.129.46/faye');
