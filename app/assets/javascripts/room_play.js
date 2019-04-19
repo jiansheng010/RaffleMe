@@ -18,7 +18,14 @@ function playRoom() {
   });
 
   // Logic for home button allowing users to be deleted when they leave the raffle
-  document.getElementById('home-button').addEventListener('click', function(){
-    client.unsubscribe('/rooms/start/' + roomCode)
-  });
+  // document.getElementById('home-button').addEventListener('click', function(){
+  //   client.unsubscribe('/rooms/start/' + roomCode)
+  // });
+
+  var el = document.getElementById('home-button');
+  if(el){
+    addEventListener('click', function(){
+      client.unsubscribe('/rooms/start/' + roomCode)
+    });
+  }
 }
