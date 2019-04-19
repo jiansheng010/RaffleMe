@@ -3,7 +3,7 @@ function endRaffle() {
     var roomCode = $("#play-flex").data("room-code")
 
     // Make a new websocket client
-    var client = new Faye.Client('http://http://68.183.129.46:22/faye');
+    var client = new Faye.Client('http://68.183.129.46/faye');
 
     // Watch for publishes to /rooms/end/room-code. On a publish, leave the raffle play
     // page and move to the raffle end screen
