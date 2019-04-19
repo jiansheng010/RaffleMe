@@ -43,7 +43,6 @@ module RaffleMe
     # the framework and any gems in your application.
 
     config.action_view.embed_authenticity_token_in_remote_forms = true
+    config.secret_key_base = 'blipblapblup'
   end
 end
-
-config.secret_key_base = 'blipblapblup'
