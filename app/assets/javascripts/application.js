@@ -13,7 +13,6 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require room_manage.js
 //= require user_room.js
 //= require room_play.js
