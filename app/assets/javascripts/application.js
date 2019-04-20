@@ -15,8 +15,8 @@
 //= require jquery_ujs
 //= require_tree .
 //= require room_manage.js
-//= require room_play.js
 //= require user_room.js
+//= require room_play.js
 //= require raffle_started.js
 //= require rails-ujs
 //= require activestorage
