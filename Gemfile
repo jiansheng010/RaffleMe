@@ -17,7 +17,8 @@ group :development do
 end
 
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+#gem 'puma', '~> 3.11'
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -43,7 +44,7 @@ source 'http://rails-assets.org' do
 end
 
 # Gems used for the websocket server
-gem 'faye'
+gem 'faye', require: false
 gem 'thin'
 gem 'faye-rails'
 
