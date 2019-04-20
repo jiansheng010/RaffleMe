@@ -10,10 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require_tree .
+
 //= require jquery
 //= require jquery_ujs
+//= require_tree .
+//= require room_manage.js
+//= require room_play.js
+//= require raffle_started.js
+//= require user_room.js
+//= require rails-ujs
 //= require activestorage
 //= require turbolinks
 
