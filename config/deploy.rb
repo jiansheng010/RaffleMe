@@ -80,10 +80,10 @@ namespace :deploy do
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end
-
+load "config/recipes/faye.rb"
 set :faye_pid, "#{deploy_to}/shared/pids/faye.pid"
 set :faye_config, "#{deploy_to}/current/faye.ru"
-load "config/recipes/faye.rb"
+
 namespace :faye do
   desc "Start Faye"
   task :start do
