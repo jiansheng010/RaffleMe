@@ -23,7 +23,7 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
-load "config/recipes/faye.rb"
+
 
 ## Defaults:
 # set :scm,           :git
@@ -83,6 +83,7 @@ end
 
 set :faye_pid, "#{deploy_to}/shared/pids/faye.pid"
 set :faye_config, "#{deploy_to}/current/faye.ru"
+load "config/recipes/faye.rb"
 namespace :faye do
   desc "Start Faye"
   task :start do
