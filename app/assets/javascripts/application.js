@@ -13,9 +13,9 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require room_manage.js
 //= require user_room.js
 //= require room_play.js
+//= require room_manage.js
 //= require raffle_started.js
 //= require rails-ujs
 //= require activestorage
