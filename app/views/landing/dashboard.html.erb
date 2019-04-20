@@ -10,7 +10,7 @@
           <td><img class="owner-crown" src="<%=asset_path "owner.svg"%>"></td>
           <td><%= link_to room.room_name, "/manage/#{room.room_code}", method: :get %></td>
           <td><%= room.room_code %></td>
-          <td><%= link_to "/deleteroom", deleteroom_path(room_code: room.room_code), method: :post, class: 'delete-button' %></td>
+          <td><%= link_to "", deleteroom_path(room_code: room.room_code), method: :post, class: 'delete-button' %></td>
         </tr>
       <% end %>
       <tr>
