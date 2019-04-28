@@ -1,5 +1,5 @@
 # Change these
-server '68.183.129.46:3000', port: 22, roles: [:web, :app, :db], primary: true
+server '68.183.129.46', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:jiansheng010/RaffleMe.git'
 set :application,     'RaffleMe'
